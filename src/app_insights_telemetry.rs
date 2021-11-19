@@ -101,6 +101,9 @@ impl AppInsightsTelemetry {
         match result {
             Some(result) => {
                 println!("Application insights is plugged");
+
+                self.initialized
+                    .store(true, std::sync::atomic::Ordering::SeqCst);
                 super::telemetry_publisher::start(shutting_down, result.key, result.receiver).await;
             }
             None => {
