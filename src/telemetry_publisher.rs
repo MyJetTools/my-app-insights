@@ -59,7 +59,7 @@ pub async fn start(
                 success,
             } => {
                 let telemetry =
-                    RemoteDependencyTelemetry::new(resource, protocol, duration, host, success);
+                    RemoteDependencyTelemetry::new(host, protocol, duration, resource, success);
                 client.track(telemetry);
             }
         }
