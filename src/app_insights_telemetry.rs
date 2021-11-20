@@ -66,9 +66,9 @@ impl AppInsightsTelemetry {
 
     pub fn write_dependency_request_duration(
         &self,
-        host: String,
-        protocol: String,
-        resource: String,
+        name: String,
+        dependency_type: String,
+        target: String,
         success: bool,
         duration: Duration,
     ) {
@@ -77,9 +77,9 @@ impl AppInsightsTelemetry {
         }
 
         let result = self.publisher.send(TelemetryEvent::HttpDependencyEvent {
-            host,
-            protocol,
-            resource,
+            name,
+            dependency_type,
+            target,
             duration,
             success,
         });

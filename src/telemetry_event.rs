@@ -10,9 +10,9 @@ pub enum TelemetryEvent {
         method: hyper::Method,
     },
     HttpDependencyEvent {
-        host: String,
-        protocol: String,
-        resource: String,
+        name: String,
+        dependency_type: String,
+        target: String,
         success: bool,
         duration: Duration,
     },
