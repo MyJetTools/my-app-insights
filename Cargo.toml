@@ -7,6 +7,7 @@ edition = "2018"
 
 [dependencies]
 my-telemetry = { branch = "main", git = "https://github.com/MyJetTools/my-telemetry.git" }
+rust-extensions = { branch = "main", git = "https://github.com/MyJetTools/rust-extensions.git" }
 
 tokio = { version = "1.5.0", features = ["full"] }
 hyper = { version = "0.14", features = ["full"] }
